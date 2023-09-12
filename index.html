@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Website ban sach</title>
+    <link rel="stylesheet" href="libs/angular.min.js">
+    <link rel="stylesheet" href="libs/angular-route.min.js ">
+    <script src="controllers/homeController.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Xin chao ban</h1>
+    <div ng-app="myapp">
+        <header>
+            <div id="menu">
+                <ul>
+                  <li><a href="#!/home">Trang chủ</a></li>
+                  <li><a href="#">Diễn đàn</a></li>
+                  <li><a href="#">Tin tức</a></li>
+                  <li><a href="#">Hỏi đáp</a></li>
+                  <li><a href="#">Liên hệ</a></li>
+                </ul>
+              </div>
+        </header>
+        <main>
+            <div ng-view>
+
+            </div>
+        </main>
+    </div>
 </body>
+<script>
+     angular.module('myapp', ['ngRoute']).config(function($routeProvider){
+        $routeProvider.when('/nhan-vien',{
+            //Day la dinh nghia ten route la trang chu
+            templateUrl : 'views/home.html', // duong dan den view
+            controller: homeController 
+        })
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </html>
