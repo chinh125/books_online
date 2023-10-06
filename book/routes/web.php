@@ -31,6 +31,7 @@ Route::match(['GET','POST'],'book/add',[BookController::class,'add'])->name('add
 Route::match(['GET','POST'],'book/edit/{id}',[BookController::class,'edit'])->name('edit-book');
 Route::get('book/delete/{id}',[BookController::class,'delete'])->name('delete-book');
 
+//Route user
 Route::get('user/list',[UserController::class,'index'])->name('list-user');
 Route::match(['GET','POST'],'user/add',[UserController::class,'add'])->name('add-user');
 Route::match(['GET','POST'],'user/edit/{id}',[UserController::class,'edit'])->name('edit-user');
