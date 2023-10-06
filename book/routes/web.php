@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\layoutController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,7 @@ Route::match(['GET','POST'],'book/add',[BookController::class,'add'])->name('add
 Route::match(['GET','POST'],'book/edit/{id}',[BookController::class,'edit'])->name('edit-book');
 Route::get('book/delete/{id}',[BookController::class,'delete'])->name('delete-book');
 
-Route::get('/admin',[BookController::class,'test']);
+Route::get('user/list',[UserController::class,'index'])->name('list-user');
+Route::match(['GET','POST'],'user/add',[UserController::class,'add'])->name('add-user');
+Route::match(['GET','POST'],'user/edit/{id}',[UserController::class,'edit'])->name('edit-user');
+Route::get('user/delete/{id}',[UserController::class,'delete'])->name('delete-user');
