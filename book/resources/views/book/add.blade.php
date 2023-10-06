@@ -34,15 +34,21 @@
         <hr style="color:#fff">
     </div>
     Description 
-    <textarea name="" id="" cols="30" rows="10" name="description_book" class="form-control"></textarea> 
+    <textarea cols="30" rows="10" name="description_book" class="form-control"></textarea> 
     <div class="row">
         <hr style="color:#fff">
     </div>
     Category 
-    <input type="text" name="cate_id" class="form-control"> 
+    <select name="cate_id" id="">
+        <option value="1">Sách thiếu nhi</option>    
+        <option value="2">Sách văn học Việt Nam</option>    
+        <option value="3">Sách văn học nước ngoài</option>    
+        <option value="4">Sách dành kĩ năng sống</option>     
+    </select> 
     <div class="row">
         <hr style="color:#fff">
     </div>
     <button class="btn btn-primary">Add new product</button>
+    <a href="{{ route('list-book') }}" role="button" class="btn btn-primary">List Book</a>
 </form>
 @endsection

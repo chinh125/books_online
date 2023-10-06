@@ -612,15 +612,15 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="#">
+				<a href="{{ route('list-category') }}">
 					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<span class="text">Category</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{ route('list-book') }}">
 					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">My Store</span>
+					<span class="text">Book</span>
 				</a>
 			</li>
 			<li>
@@ -688,10 +688,10 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Category</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+							<a href="">Category</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>

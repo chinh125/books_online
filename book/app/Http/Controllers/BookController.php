@@ -6,11 +6,15 @@ use App\Models\book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
     public function index(book $book){
-        $books = $book::all();
+        $books = DB::table('books')
+        ->join('categories','books.cate_id','=','categories.id')
+        ->select('books.*','categories.category_name')
+        ->get();
         return view('book.index',compact("books"));
     }
 
