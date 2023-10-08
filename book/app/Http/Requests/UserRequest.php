@@ -42,7 +42,7 @@ class UserRequest extends FormRequest
                                 "gender" => "required",
                                 "role" => "required"
                             ]; break;
-                    }default: break;
+                    } default: break;
             }
             return $rules;
     }

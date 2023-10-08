@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Models\book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -18,7 +19,7 @@ class BookController extends Controller
         return view('book.index',compact("books"));
     }
 
-    public function add(Request $request,book $book){
+    public function add(BookRequest $request,book $book){
         if($request->isMethod('POST')){
             if($request->hasFile('image') && $request->file('image')){
                 $request->image = uploadFile('images',$request->file('image'));
@@ -33,7 +34,7 @@ class BookController extends Controller
         return view('book.add');
     }
 
-    public function edit(Request $request,$id,book $book){
+    public function edit(BookRequest $request,$id,book $book){
         $books = $book::where('id',$id)->first();
         if($request->isMethod('POST')){
             $params = $request->except('_token');

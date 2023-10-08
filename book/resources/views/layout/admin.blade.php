@@ -624,9 +624,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="{{ route('list-user') }}">
 					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Analytics</span>
+					<span class="text">User</span>
 				</a>
 			</li>
 			<li>
@@ -728,7 +728,6 @@
 					</span>
 				</li>
 			</ul>
-			@include('layout.error')
 			@yield('content')
 			
 		</main>
