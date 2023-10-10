@@ -2,7 +2,6 @@
 @section('content')
 <form action="{{ route('edit-book',['id'=>request()->route('id')]) }}" method="post" enctype="multipart/form-data">
     @csrf
-    @csrf
     <div class="row">
         <div class="col-md-6">
             Title
