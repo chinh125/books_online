@@ -38,12 +38,6 @@
 										<em>Contact</em>
 									</a>
 								</li>
-								<li>
-									<a href="javascript:void(0);">
-										<i class="icon-question-circle"></i>
-										<em>Help</em>
-									</a>
-								</li>
 							</ul>
 							<div class="dropdown tg-themedropdown tg-currencydropdown">
 								<a href="javascript:void(0);" id="tg-currenty" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,7 +66,7 @@
 								</ul>
 							</div>
 							<div class="tg-userlogin">
-								<figure><a href="javascript:void(0);"><img src="images/users/img-01.jpg" alt="image description"></a></figure>
+								{{-- <figure><a href="javascript:void(0);"><img src="" alt="image description"></a></figure> --}}
 								<span>Hi, John</span>
 							</div>
 						</div>
@@ -83,7 +77,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="tg-logo"><a href="index-2.html"><img src="images/logo.png" alt="company name here"></a></strong>
+							<strong class="tg-logo"><a href="index-2.html"><img src="{{ $books->image?Storage::url($books->image) : ''   }}" alt="company name here"></a></strong>
 							<div class="tg-wishlistandcart">
 								<div class="dropdown tg-themedropdown tg-wishlistdropdown">
 									<a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -817,7 +811,7 @@
 				Header End
 		*************************************-->
 
-			<!--************************************
+			{{-- <!--************************************
 					Best Selling Start
 			*************************************-->
 			<section class="tg-sectionspace tg-haslayout">
@@ -1619,7 +1613,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> --}}
 			<!--************************************
 					Latest News End
 			*************************************-->

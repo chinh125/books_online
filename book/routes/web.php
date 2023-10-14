@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\layoutController;
+use App\Http\Controllers\PromocodeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +38,15 @@ Route::get('user/list',[UserController::class,'index'])->name('list-user');
 Route::match(['GET','POST'],'user/add',[UserController::class,'add'])->name('add-user');
 Route::match(['GET','POST'],'user/edit/{id}',[UserController::class,'edit'])->name('edit-user');
 Route::get('user/delete/{id}',[UserController::class,'delete'])->name('delete-user');
+
+//Route author
+Route::get('author/list',[AuthorController::class,'index'])->name('list-author');
+Route::match(['GET','POST'],'author/add',[AuthorController::class,'add'])->name('add-author');
+Route::match(['GET','POST'],'author/edit/{id}',[AuthorController::class,'edit'])->name('edit-author');
+Route::get('author/delete/{id}',[AuthorController::class,'delete'])->name('delete-author');
+
+//Route promo code
+Route::get('promo_code/list',[PromocodeController::class,'index'])->name('list-promo-code');
+Route::match(['GET','POST'],'promo_code/add',[PromocodeController::class,'add'])->name('add-promo-code');
+Route::match(['GET','POST'],'promo_code/edit/{id}',[PromocodeController::class,'edit'])->name('edit-promo-code');
+Route::get('promo_code/delete/{id}',[PromocodeController::class,'delete'])->name('delete-promo-code');
