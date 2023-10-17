@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('content')
+<h1 style="color: red">{{ $tieu_de }}</h1>
 <table border="1" class="table table-striped table-hover">
     <tr class="table">
         <td>ID</td>
@@ -25,8 +26,9 @@
             <td style="text-align:center">{{ $book->quantity }}</td>
             <td>{{ $book->category_name }}</td>
             <td style="text-align:center;">
-                <a href="{{ route('delete-book',['id'=>$book->id]) }}" role="button" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger">Delete</a>
                 <a href="{{ route('edit-book',['id'=>$book->id]) }}" role="button" class="btn btn-success" style="margin-top: 10px">Edit</a>
+                <a href="{{ route('delete-book',['id'=>$book->id]) }}" role="button" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger">Delete</a>
+                
             </td>
         </tr>
     @endforeach

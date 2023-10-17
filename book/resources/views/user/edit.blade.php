@@ -18,8 +18,8 @@
     <div class="row"><hr style="color: #fff"></div>
     <select name="role" class="form-control">
         <option value="" >--Choice--</option>
-        <option value="0" value="{{ $user->role }}">Administrators</option>
-        <option value="1" value="{{ $user->role }}">Customers</option>
+        <option value="0" @if($user->role == 0) selected @endif>Administrators</option>
+        <option value="1" @if($user->role == 1) selected @endif>Customers</option>
     </select>
     <div class="row"><hr style="color: #fff"></div>
     <button class="btn btn-primary" style="font-family: Roboto">Add new user</button>

@@ -624,21 +624,21 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Analytics</span>
+				<a href="{{ route('list-author') }}">
+					<i class='bx bxs-doughnut-chart'></i>
+					<span class="text">Author</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Message</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
+				<a href="{{ route('list-user') }}">
 					<i class='bx bxs-group' ></i>
-					<span class="text">Team</span>
+					<span class="text">User</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('list-promo-code') }}">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Voucher</span>
 				</a>
 			</li>
 		</ul>
@@ -686,11 +686,6 @@
 
 		<!-- MAIN -->
 		<main>
-			<div class="head-title">
-				<div class="left">
-					<h1>Category	</h1>
-				</div>
-			</div>
 			@include('layout.error')
 			@yield('content')
 			

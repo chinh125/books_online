@@ -25,8 +25,12 @@
         <div class="row">
             <div class="col-md-6">
                Code payyment <div class="row"><hr style="color: #fff"></div>
-            <input type="radio" name="code_payyment" value="0"> 5%
-            <input type="radio" name="code_payyment" value="1"> 10%
+            <select name="code_payyment" class="form-control">
+                <option value="0">5%</option>
+                <option value="1">10%</option>
+                <option value="2">15%</option>
+                <option value="3">20%</option>
+            </select>
             </div>
         </div> <div class="row"><hr style="color: #fff"></div>
         <button class="btn btn-primary" style="font-family: Roboto">Add promo code new</button>

@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 class AuthorController extends Controller
 {
     public function index(){
+        $tieu_de = "Author";
         $authors = author::all();
-        return view('author.index',compact('authors'));
+        return view('author.index',compact('authors','tieu_de'));
     }
 
     public function add(Request $request){

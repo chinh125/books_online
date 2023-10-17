@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     public function index(user $users){
+        $tieu_de = "User";
         $user = $users::all();
-        return view('user.index',compact('user'));
+        return view('user.index',compact('user','tieu_de'));
     }
 
     public function add(UserRequest $userRequest){

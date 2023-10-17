@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('content')
+<h1>{{ $tieu_de }}</h1>
 <table class="table" style="text-align: center">
     <tr class="table-active">
         <td>ID</td>

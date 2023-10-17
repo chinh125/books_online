@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('content')
+<h1>{{ $tieu_de }}</h1>
     <table  class="table table-striped table-hover">
         <tr>
             <td>ID</td>

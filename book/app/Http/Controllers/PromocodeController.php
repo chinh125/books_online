@@ -10,8 +10,9 @@ class PromocodeController extends Controller
 {
     public function index()
     {
+        $tieu_de = "Voucher";
         $promo_code = promocode::all();
-        return view('promocode.index',compact('promo_code'));
+        return view('promocode.index',compact('promo_code','tieu_de'));
     }
 
     public function add(Request $request)

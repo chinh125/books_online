@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\DB;
 class BookController extends Controller
 {
     public function index(book $book){
+        $tieu_de = "Book Table";
         $books = DB::table('books')
         ->join('categories','books.cate_id','=','categories.id')
         ->select('books.*','categories.category_name')
+        ->orderBy('id','desc')
         ->get();
-        return view('book.index',compact("books"));
+        return view('book.index',compact("books","tieu_de"));
     }
 
     public function add(Request $request,book $book){
@@ -49,7 +51,7 @@ class BookController extends Controller
             $result = $books::where('id',$id)->update($params);
             if($result){
                 Session::flash('succcess','Sua thanh cong');
-                return redirect()->route('edit-book');
+                return redirect()->route('edit-book',['id',$id]);
             }
         }
         return view('book.edit',compact('books'));
