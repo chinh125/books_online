@@ -7,6 +7,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\user;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index(user $users){
@@ -16,6 +17,7 @@ class UserController extends Controller
     }
 
     public function add(UserRequest $userRequest){
+        $userRequest->merge(['password'=> Hash::make($userRequest->password)]);
         if($userRequest->isMethod('POST')){
             $params = $userRequest->except('_token');
             $user = user::create($params);

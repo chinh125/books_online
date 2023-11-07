@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('content')
+<?php use App\Models\author; use App\Models\category; ?>
 <form action="{{ route('add-book') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
@@ -40,14 +41,15 @@
     </div>
     Category 
     <select name="cate_id" id="">
-        <option value="1">Sách thiếu nhi</option>    
-        <option value="2">Sách văn học Việt Nam</option>    
-        <option value="3">Sách văn học nước ngoài</option>    
-        <option value="4">Sách dành kĩ năng sống</option>     
+        @foreach (category::all() as $cate_book)
+        <option value="{{ $cate_book->id }}">{{ $cate_book->category_name }}</option>  
+        @endforeach
     </select> 
     <div class="row">
         <hr style="color:#fff">
     </div>
+    Auhtor
+    <input type="text" name="author_name" id="" class="form-control">
     <button class="btn btn-primary">Add new product</button>
     <a href="{{ route('list-book') }}" role="button" class="btn btn-primary">List Book</a>
 </form>

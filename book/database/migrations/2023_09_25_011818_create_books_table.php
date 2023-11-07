@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('description_book')->nullable();
             $table->integer('quantity');
             $table->unsignedBigInteger('cate_id');
+            $table->string('author_name')->nullable();
             $table->foreign('cate_id')->references('id')->on('categories');
             $table->timestamps();
         });

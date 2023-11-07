@@ -34,7 +34,8 @@ class BookRequest extends FormRequest
                             "image"=> "required",
                             "description_book"=> "required",
                             "quantity"=> "required",
-                            "cate_id"=> "required"
+                            "cate_id"=> "required",
+                            "author_name"=> "required"
                         ];
                         break;
                     case 'edit':
@@ -44,7 +45,8 @@ class BookRequest extends FormRequest
                             "release_time"=> "required",
                             "description_book"=> "required",
                             "quantity"=> "required",
-                            "cate_id"=> "required"
+                            "cate_id"=> "required",
+                            "author_name"=> "required"
                         ];
                         break;
                     default: break;
@@ -63,6 +65,7 @@ class BookRequest extends FormRequest
             "description_book.required" => "Không được bỏ trống mô tả sách",
             "quantity.required" => "Không được bỏ trống số lượng",
             "cate_id.required" => "Không được bỏ trống danh mục",
+            "author_name.required" => "Không được bỏ trống tên tác giả"
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Models\category;
+use App\Models\book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -45,5 +46,11 @@ class CategoryController extends Controller
             Session::flash('success','Xóa thành công');
             return redirect()->route('list-category');
         }
+    }
+
+    public function category_book($slug){
+        $categories = category::where('category_name',$slug)->get();
+        // $cate_book = book::where('cate_id',$detail_book->cate_id)->get();
+        return view('layout.category', compact('categories'));
     }
 }

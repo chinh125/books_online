@@ -48,6 +48,7 @@
     <div class="row">
         <hr style="color:#fff">
     </div>
+    <input type="text" name="author_name" class="form-control" value="{{ $books->author_name }}">
     <button class="btn btn-success">Update</button>
 </form>
 
