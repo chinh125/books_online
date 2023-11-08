@@ -37,7 +37,7 @@
                                     {{ intval(number_format($value['price'])) * intval(number_format($value['quantity'])) }},000
                                 </td>
                                 <td class="shoping__cart__item__close">
-                                    <span class=""></span>
+                                    <a href="" class="bi bi-x" style="font-size: 30px;color: black"></a>
                                 </td>
                             </tr>
                             @endforeach

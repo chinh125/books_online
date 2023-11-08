@@ -1,5 +1,11 @@
 @extends('layout.index')
 @section('content')
+<style>
+    .bi-facebook:hover{color:blue}
+    .bi-twitter:hover{color:rgb(178, 178, 240)}
+    .bi-instagram:hover{color:blue}
+    .bi-pinterest:hover{color:red}
+</style>
 <div class="row">
     <hr style="color:#fff">
 </div>
@@ -56,7 +62,6 @@
                     <ul>
                         <li><b>Tác giả</b> <span>{{ $detail_book->author_name }}</span></li>
                         <li><b>Shipping</b>  <samp style="color: red">Free pickup today</samp></span></li>
-                        <li><b>Weight</b> <span>0.5 kg</span></li>
                         <li><b>Share on</b>
                             <div class="share">
                                 <a href="#"><i class="bi bi-facebook"></i></a>

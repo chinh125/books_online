@@ -24,7 +24,8 @@ class Kernel extends HttpKernel
     ];
 
     protected $routeMiddleware = [
-        'CheckLogout' => \App\Http\Middleware\CheckLogout::class
+        'CheckLogout' => \App\Http\Middleware\CheckLogout::class,
+        'CheckUser' => \App\Http\Middleware\CheckUser::class
     ];
 
     /**

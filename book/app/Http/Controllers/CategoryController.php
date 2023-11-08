@@ -48,9 +48,19 @@ class CategoryController extends Controller
         }
     }
 
-    public function category_book($slug){
-        $categories = category::where('category_name',$slug)->get();
-        // $cate_book = book::where('cate_id',$detail_book->cate_id)->get();
-        return view('layout.category', compact('categories'));
+    public function category_book($id,Request $request){
+        $cate = book::join('categories','categories.id','=','books.cate_id')
+        ->where('books.cate_id',$id)
+        ->select('categories.category_name','books.title','books.price','books.image','books.cate_id')
+        ->first();
+        $detail_book = book::
+        join('categories','books.cate_id','=','categories.id')
+        ->select('books.*','categories.category_name')
+        ->where('books.id',$id)
+        ->first();
+        $cate_book = book::where('cate_id',$detail_book->cate_id)->get();
+        $cates = category::all();
+        
+        return view('layout.category', compact('cate','cates','cate_book'));
     }
 }

@@ -58,18 +58,18 @@ Route::match(['GET','POST'],'promo_code/edit/{id}',[PromocodeController::class,'
 Route::get('promo_code/delete/{id}',[PromocodeController::class,'delete'])->name('delete-promo-code');
 
 //Route views
-Route::get('views/list',[ViewController::class,'index'])->name('list-views');
+Route::get('views/list',[ViewController::class,'index'])->name('list-views')->middleware('CheckLogout');
 Route::get('views/delete/{id}',[ViewController::class,'delete'])->name('delete-views');
 
 // Route detail
 Route::get('details/{id}',[DetailController::class,'index'])->name('detail-book');
 
 // Route cart
-Route::get('/cart',[CartController::class,'index'])->name('cart-shop');
-Route::post('cart-add',[CartController::class,'add'])->name('add-to-cart');
+Route::get('/cart',[CartController::class,'index'])->name('cart-shop')->middleware('CheckUser');
+Route::post('cart-add',[CartController::class,'add'])->name('add-to-cart')->middleware('CheckUser');
 
 //Route category product
-Route::get('cate_book/{slug}',[CategoryController::class,'category_book'])->name('categories-book');
+Route::get('cate_book/{id}',[CategoryController::class,'category_book'])->name('categories-book');
 
 Route::get('/login/book',[LoginController::class,'index'])->name('login');
 Route::get('register/book',[LoginController::class,'register'])->name('register');
@@ -78,5 +78,6 @@ Route::post('/login',[LoginController::class,'postLogin'])->name('login-home');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/admin',[AdminController::class,'index'])->name('admin')->middleware('CheckLogout');
 
-Route::post('payyment/vnpay',[PaymentController::class,'vn_pay'])->name('payyment_vn_pay');
+Route::post('payyment/vnpay',[PaymentController::class,'vn_pay'])->name('payyment_vn_pay')->middleware('CheckUser');
 Route::get('checkout',[PaymentController::class,'checkout']);
+Route::get('/search',[layoutController::class,'search_item'])->name('search');

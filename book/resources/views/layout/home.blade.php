@@ -43,9 +43,8 @@
                 </div>
                 <div class="featurde_book_tag">
                     <h4>Tên Sách: {{$book->title}}</h3>
-                    <h5 class="writer">Tác Giả: {{$book->author_name}}</h5> 
-                    <h5 class="writer">Loại Sách: {{ $book->cate_id == $book->cate_id ? $book->category_name : ""}}</h5> 
-                    <h5 class="book_price">Giá Khuyến Mãi: {{number_format($book->price).' '.'VNĐ'}}<sub><del><br> Giá Gốc: {{number_format($book->price).' '.'VNĐ'}} VNĐ</del></sub></h5>
+                    <h5 class="writer">Tác Giả: {{$book->author_name}}</h5>  
+                    <h5 class="book_price">Giá Khuyến Mãi: {{ number_format(intval($book->price)-(intval($book->price) * 0.2))  }} VNĐ<div style="text-decoration: line-through"><br> Giá Gốc: {{number_format($book->price).' '.'VNĐ'}} VNĐ</div></h5>
                     <a href="{{ route('detail-book',['id'=>$book->id]) }}" class="f_btn" id="btn-view">Chi Tiết</a>
                 </div>
         </div>
@@ -63,11 +62,10 @@
                     <img src="{{$book->image? Storage::url($book->image):''}}">
                 </div>
                 <div class="featurde_book_tag">
-                    <h4>Tên Sách: {{$book->title}}</h3>
-                    <h5 class="writer">Tác Giả: {{$book->author_name}}</h5> 
-                    <h5>Loại Sách: {{ $book->category_name}}</h5> 
-                    <h5>Giá Khuyến Mãi: {{number_format($book->price).' '.'VNĐ'}}<sub><del><br> Giá Gốc: {{number_format($book->price).' '.'VNĐ'}} VNĐ</del></sub></h5>
-                    <a href="#" class="f_btn">Chi Tiết</a>
+                  <h4>Tên Sách: {{$book->title}}</h3>
+                    <h5 class="writer">Tác Giả: {{$book->author_name}}</h5>  
+                    <h5 class="book_price">Giá Khuyến Mãi: {{ number_format(intval($book->price)-(intval($book->price) * 0.2))  }} VNĐ<div style="text-decoration: line-through"><br> Giá Gốc: {{number_format($book->price).' '.'VNĐ'}} VNĐ</div></h5>
+                    <a href="{{ route('detail-book',['id'=>$book->id]) }}" class="f_btn" id="btn-view">Chi Tiết</a>
                 </div>
         </div>
         @endforeach

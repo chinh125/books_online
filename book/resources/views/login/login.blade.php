@@ -10,18 +10,18 @@
 </head>
 <body>
     <div class="login-form-container">
-        @if($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
-                <button type="button" data-dismiss="alert" class="alert">x</button>
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
         <a href="{{ route('home') }}"><div id="close-login-btn" class="fas fa-times"></div></a>
         <form action="{{ route('login-home') }}" method="post" enctype="multipart/form-data">
             @csrf
             <h3>Đăng nhập</h3>
+            @if($message = Session::get('error'))
+            <div class="alert alert-danger ">
+                <button type="button" data-dismiss="alert" class="alert"><span style="color: red">X</span></button>
+                <strong style="font-size: 12px">{{ $message }}</strong>
+            </div>
+        @endif
             <span>Email</span>
-            <input type="text" name="email" class="box" id="" placeholder="enter your user name">
+            <input type="email" name="email" required class="box" id="" placeholder="enter your user email">
             <span>Password</span>
             <input type="password" name="password" id="" class="box" placeholder="enter your password">
             <input type="submit" value="sign in" class="btn">
