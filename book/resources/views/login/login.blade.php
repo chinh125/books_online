@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="login-form-container">
-        <a href="{{ route('home') }}"><div id="close-login-btn" class="fas fa-times"></div></a>
+        {{-- <a href="{{ route('home') }}"><div id="close-login-btn" class="fas fa-times"></div></a> --}}
         <form action="{{ route('login-home') }}" method="post" enctype="multipart/form-data">
             @csrf
             <h3>Đăng nhập</h3>

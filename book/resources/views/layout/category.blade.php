@@ -36,7 +36,7 @@
                         
                             <div class="col-lg-4">
                                 <div class="product__discount__item">
-                                    <div class="product__discount__item__pic set-bg">
+                                    <div class="product__discount__item__pic set-bg" style="text-align: center">
                                     <img src="{{ $pd->image? Storage::url($pd->image):'' }}" alt="">
                                     </div>
                                     <div class="product__discount__item__text">

@@ -45,7 +45,7 @@
                         <i class="bi bi-star"></i>
                         <i class="bi bi-star-half-o"></i>
                     </div>
-                    <div class="product__details__price"> {{ $detail_book->price }} VND</div>
+                    <div class="product__details__price"> {{number_format($detail_book->price) }} VNĐ</div>
                     <p>{{ $detail_book->description_book }}</p>
                     <div class="product__details__quantity">
                         <div class="quantity">
@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title related__product__title">
-                    <h2>Related Product</h2>
+                    <h2>Giới thiệu bổ sung</h2>
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="product__item__text">
                         <h6><a href="{{ route('detail-book',['id'=>$item->id]) }}">{{ $item->title }}</a></h6>
-                        <h5>{{ $item->price }}</h5>
+                        <h5>{{ number_format($item->price) }} VNĐ</h5>
                     </div>
                 </div>
             </div>

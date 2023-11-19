@@ -8,13 +8,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="{{ asset('storage/images/slide1.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{ asset('storage/images/slides1.jpg') }}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="{{ asset('storage/images/slide2.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{ asset('storage/images/slides2.jpg') }}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('storage/images/slide3.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{ asset('storage/images/slides3.jpg') }}" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -54,7 +54,7 @@
 </div>
 
 <div class="featured_boks">
-    <h1>Sách mới nhất</h1>
+    <h1>Sách ngoại ngữ mới nhất</h1>
     <div class="featured_book_box">
         @foreach($books as $book)
         <div class="featured_book_card">

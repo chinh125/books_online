@@ -40,10 +40,10 @@
     </div>
     Category 
     <select name="cate_id" id="" class="form-control">
-        <option value="1" @if($books->cate_id == 1) selected @endif>Sách thiếu nhi</option>    
-        <option value="2" @if($books->cate_id == 2) selected @endif>Sách văn học Việt Nam</option>    
-        <option value="3" @if($books->cate_id == 3) selected @endif>Sách văn học nước ngoài</option>    
-        <option value="4" @if($books->cate_id == 4) selected @endif>Sách dành kĩ năng sống</option>     
+        <option value="3" @if($books->cate_id == 3) selected @endif>Sách thiếu nhi</option>    
+        <option value="1" @if($books->cate_id == 1) selected @endif>Sách văn học Việt Nam</option>    
+        <option value="2" @if($books->cate_id == 2) selected @endif>Sách văn học nước ngoài</option>    
+        <option value="4" @if($books->cate_id == 4) selected @endif>Sách ngoại ngữ</option>     
     </select>  
     <div class="row">
         <hr style="color:#fff">

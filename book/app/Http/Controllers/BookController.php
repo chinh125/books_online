@@ -15,9 +15,9 @@ class BookController extends Controller
         $books = DB::table('books')
         ->join('categories','books.cate_id','=','categories.id')
         ->select('books.*','categories.category_name')
-        ->orderBy('id','desc')
-        ->get();
-        return view('book.index',compact("books","tieu_de"));
+        ->orderBy('id','asc')
+        ->paginate(5);
+        return view('book.index',compact("books","tieu_de"))->with('i',(request()->input('page',1) -1) *5);
     }
 
     public function add(Request $request,book $book){
@@ -51,7 +51,7 @@ class BookController extends Controller
             $result = $books::where('id',$id)->update($params);
             if($result){
                 Session::flash('succcess','Sua thanh cong');
-                return redirect()->route('edit-book',['id',$id]);
+                return redirect()->route('list-book');
             }
         }
         return view('book.edit',compact('books'));

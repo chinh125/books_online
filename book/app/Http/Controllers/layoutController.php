@@ -13,7 +13,9 @@ class layoutController extends Controller
         $books = $book::
         join('categories','books.cate_id','=','categories.id')
         ->select('books.*','categories.category_name')
-        ->get();
+        ->orderBy('id','asc')
+        ->where('cate_id','=',4)
+        ->paginate(5);
         $book_top = book::all()->sortByDesc('rate')->take(10);
         return view('layout.home',compact('books','book_top'));
     }

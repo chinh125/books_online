@@ -25,15 +25,15 @@
             </td>
             <td>{{ $book->description_book }}</td>
             <td style="text-align:center">{{ $book->quantity }}</td>
-            <td>{{ $book->category_name }}</td>
+            <td>{{ $book->cate_id == $book->cate_id ? $book->category_name : '' }}</td>
             <td>{{ $book->author_name }}</td>
             <td style="text-align:center;">
                 <a href="{{ route('edit-book',['id'=>$book->id]) }}" role="button" class="btn btn-success" style="margin-top: 10px">Edit</a>
                 <a href="{{ route('delete-book',['id'=>$book->id]) }}" role="button" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger">Delete</a>
-                
             </td>
         </tr>
     @endforeach
 </table>
+{{ $books->links() }}
 <a href="{{ route('add-book') }}" role="button" class="btn btn-primary">Add new</a>
 @endsection

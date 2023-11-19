@@ -4,8 +4,8 @@
     a{text-decoration: none;color: #444}
     a:hover{color:green;font-weight: bold;transition: 0.5;}
     img{text-align: center;width: 150px;height: 200px}
-    img:hover{ width: 200px;height: 250px;transform: scale(1.0);}
-    .container{height: 320px;margin-top: 20px}
+    img:hover{ width: 200px;height: 230px;transform: scale(1.0);}
+    .container{height: auto;margin-top: 20px;margin-bottom: 100px}
 </style>
 <div class="container">
 <div class="row">

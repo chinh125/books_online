@@ -16,7 +16,7 @@ class DetailController extends Controller
         ->select('books.*','categories.category_name')
         ->where('books.id',$id)
         ->first();
-        $cate_book = book::where('cate_id',$detail_book->cate_id)->get();
+        $cate_book = book::where('cate_id',$detail_book->cate_id)->paginate(4);
         return view('layout.detail',compact('detail_book','cate_book'));
     }
 }

@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-             Relsease time
+            Relsease time
     <input type="text" name="release_time" class="form-control">
         </div>
         <div class="col-md-6">
@@ -40,7 +40,7 @@
         <hr style="color:#fff">
     </div>
     Category 
-    <select name="cate_id" id="">
+    <select name="cate_id" id="" class="form-control">
         @foreach (category::all() as $cate_book)
         <option value="{{ $cate_book->id }}">{{ $cate_book->category_name }}</option>  
         @endforeach

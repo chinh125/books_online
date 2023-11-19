@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[layoutController::class,'index'])->name('home');
+Route::get('/home',[layoutController::class,'index'])->name('home')->middleware('CheckUser');
 
 //Route Category
 Route::get('category/list',[CategoryController::class,'index'])->name('list-category')->middleware('CheckLogout');
@@ -69,15 +69,15 @@ Route::get('/cart',[CartController::class,'index'])->name('cart-shop')->middlewa
 Route::post('cart-add',[CartController::class,'add'])->name('add-to-cart')->middleware('CheckUser');
 
 //Route category product
-Route::get('cate_book/{id}',[CategoryController::class,'category_book'])->name('categories-book');
+Route::get('cate_book/{id}',[CategoryController::class,'category_book'])->name('categories-book')->middleware('CheckUser');
 
-Route::get('/login/book',[LoginController::class,'index'])->name('login');
+Route::get('/',[LoginController::class,'index'])->name('login');
 Route::get('register/book',[LoginController::class,'register'])->name('register');
 Route::post('register/add-user',[LoginController::class,'postRegister'])->name('register-add');
 Route::post('/login',[LoginController::class,'postLogin'])->name('login-home');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/admin',[AdminController::class,'index'])->name('admin')->middleware('CheckLogout');
 
-Route::post('payyment/vnpay',[PaymentController::class,'vn_pay'])->name('payyment_vn_pay')->middleware('CheckUser');
-Route::get('checkout',[PaymentController::class,'checkout']);
+Route::post('payyment/vnpay',[PaymentController::class,'vn_pay'])->name('payyment_vn_pay');
+Route::get('payyment/checkout',[PaymentController::class,'checkout'])->name('vn_pay_checkout');
 Route::get('/search',[layoutController::class,'search_item'])->name('search');

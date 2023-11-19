@@ -17,7 +17,7 @@ class CheckUser
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::guest()){
-            return redirect()->intended('/login/book');
+            return redirect()->intended('/');
         }
         return $next($request);
     }

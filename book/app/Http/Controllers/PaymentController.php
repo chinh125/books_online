@@ -12,7 +12,7 @@ class PaymentController extends Controller
 $price = new Cart;
 $total_price = $price->totalPrice();
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "http://127.0.0.1:8000/checkout";
+$vnp_Returnurl = "http://127.0.0.1:8000/cart";
 $vnp_TmnCode = "OEPQ68TA";//Mã website tại VNPAY 
 $vnp_HashSecret = "WIGJJTSOVFPWTCZMMWBKTBXJRKHWKWZX"; //Chuỗi bí mật
 
@@ -36,6 +36,21 @@ $inputData = array(
     "vnp_OrderType" => $vnp_OrderType,
     "vnp_ReturnUrl" => $vnp_Returnurl,
     "vnp_TxnRef" => $vnp_TxnRef,
+    // "vnp_ExpireDate"=>$vnp_ExpireDate,
+    // "vnp_Bill_Mobile"=>$vnp_Bill_Mobile,
+    // "vnp_Bill_Email"=>$vnp_Bill_Email,
+    // "vnp_Bill_FirstName"=>$vnp_Bill_FirstName,
+    // "vnp_Bill_LastName"=>$vnp_Bill_LastName,
+    // "vnp_Bill_Address"=>$vnp_Bill_Address,
+    // "vnp_Bill_City"=>$vnp_Bill_City,
+    // "vnp_Bill_Country"=>$vnp_Bill_Country,
+    // "vnp_Inv_Phone"=>$vnp_Inv_Phone,
+    // "vnp_Inv_Email"=>$vnp_Inv_Email,
+    // "vnp_Inv_Customer"=>$vnp_Inv_Customer,
+    // "vnp_Inv_Address"=>$vnp_Inv_Address,
+    // "vnp_Inv_Company"=>$vnp_Inv_Company,
+    // "vnp_Inv_Taxcode"=>$vnp_Inv_Taxcode,
+    // "vnp_Inv_Type"=>$vnp_Inv_Type
 );
 
 if (isset($vnp_BankCode) && $vnp_BankCode != "") {

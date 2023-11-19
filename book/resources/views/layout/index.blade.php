@@ -16,15 +16,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-    
-      </style>
 </head>
 <body>
     <header class="header">
         <div class="header-1">
             
-        <a href="#" class="logo" style="padding-left: 50px;text-decoration:none"><i class="fas fa-book"></i>bookly</a>
+        <a href="{{ route('home') }}" class="logo" style="padding-left: 50px;text-decoration:none"><i class="fas fa-book"></i>bookly</a>
         
             <form action="{{ route('search') }}" method="get" class="search-form">
                 <input type="text" name="search" placeholder="search here ..." id="search-book">
@@ -51,8 +48,8 @@
                 <li>
                 <a href="">Sản Phẩm</a>
                 <ul class="sub-menu">
-                    @foreach(category::all() as $cate)
-                    <li><a href="{{ route('categories-book',['id'=>$cate->id]) }}">{{ $cate->category_name }}</a></li>
+                    @foreach(category::all() as $cates)
+                    <li><a href="{{ route('categories-book',['id'=>$cates->id]) }}">{{ $cates->category_name }}</a></li>
                     @endforeach
                     </ul>
                 </li>
